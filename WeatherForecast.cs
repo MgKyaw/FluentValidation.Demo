@@ -12,4 +12,12 @@ namespace FluentValidation.Demo
 
         public string Summary { get; set; }
     }
+
+    public class WeatherForecastValidator : AbstractValidator<WeatherForecast>
+    {
+        public WeatherForecastValidator()
+        {
+            RuleFor(model => model.TemperatureC).LessThanOrEqualTo(100);
+        }
+    }
 }
