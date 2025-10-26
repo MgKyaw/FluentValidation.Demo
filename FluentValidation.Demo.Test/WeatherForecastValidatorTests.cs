@@ -7,9 +7,7 @@ namespace FluentValidation.Demo.Test
         private readonly WeatherForecastValidator _validator = new WeatherForecastValidator();
 
         [Fact]
-        public void Test1()
-        {
-
-        }
+        public void GivenAnInvalidTemperatureCValue_ShouldHaveValidationError()
+            => _validator.ShouldHaveValidationErrorFor(model => model.TemperatureC, 101);
     }
 }
